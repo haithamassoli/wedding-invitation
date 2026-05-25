@@ -1,0 +1,36 @@
+export const CONTENT = {
+  bismillah: "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",
+  weddingInvitation: "دعوة زفاف",
+  greetingPersonal: (name: string) => `حيّاك الله يا ${name}`,
+  greetingGeneral: "حيّاكم الله",
+  scrollHint: "اسحب للأسفل",
+
+  quranVerse:
+    "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ",
+  quranReference: "سورة الروم - آية ٢١",
+
+  groomName: "هيثم",
+  brideName: "زوجته",
+  andWord: "و",
+
+  dateLabel: "التاريخ",
+  dateValue: "الجمعة ٢٩ مايو ٢٠٢٦",
+  timeLabel: "الوقت",
+  timeValue: "من ٧:٣٠ مساءً إلى ٩:٣٠ مساءً",
+  locationLabel: "المكان",
+  locationValue: "مجمع النقابات المهنية - إربد",
+
+  countdownDays: "يوم",
+  countdownHours: "ساعة",
+  countdownMinutes: "دقيقة",
+  countdownSeconds: "ثانية",
+  countdownExpired: "بارك الله لهما",
+
+  instructionsTitle: "تنبيهات",
+  noMusic: "حفل إسلامي بدون موسيقى",
+  noPhotography: "يُمنع التصوير في قسم النساء",
+
+  closingPrayer:
+    "اللهم بارك لهما وبارك عليهما واجمع بينهما في خير",
+  closingWish: "نسأل الله أن يجعل هذا الزواج مباركاً",
+} as const;
