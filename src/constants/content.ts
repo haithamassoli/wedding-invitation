@@ -19,6 +19,7 @@ export const CONTENT = {
   timeValue: "من ٧:٣٠ مساءً إلى ٩:٣٠ مساءً",
   locationLabel: "المكان",
   locationValue: "مجمع النقابات المهنية - إربد",
+  locationMapUrl: "https://maps.app.goo.gl/WB4rNVB1JYRK1Bpk6",
 
   countdownDays: "يوم",
   countdownHours: "ساعة",

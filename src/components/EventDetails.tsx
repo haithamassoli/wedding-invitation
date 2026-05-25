@@ -34,53 +34,88 @@ const details = [
     ),
     label: CONTENT.locationLabel,
     value: CONTENT.locationValue,
+    href: CONTENT.locationMapUrl,
   },
 ];
+
+const cardClassName =
+  "relative flex items-center gap-5 p-6 md:p-7 rounded-xl border border-gold-base/20 bg-emerald-base/25 backdrop-blur-sm card-glow overflow-hidden";
 
 export function EventDetails() {
   return (
     <section className="py-20 md:py-28 px-6">
       <div className="max-w-xl mx-auto flex flex-col gap-5">
-        {details.map((detail, i) => (
-          <motion.div
-            key={detail.label}
-            className="relative flex items-center gap-5 p-6 md:p-7 rounded-xl border border-gold-base/20 bg-emerald-base/25 backdrop-blur-sm card-glow overflow-hidden"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 0.8,
-              ease: "easeOut",
-              delay: i * 0.15,
-            }}
-          >
-            {/* Subtle gradient accent */}
-            <div className="absolute top-0 right-0 w-24 h-24 bg-gold-base/[0.03] rounded-full -translate-y-1/2 translate-x-1/2" />
+        {details.map((detail, i) => {
+          const content = (
+            <>
+              {/* Subtle gradient accent */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gold-base/[0.03] rounded-full -translate-y-1/2 translate-x-1/2" />
 
+              <motion.div
+                className="relative shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gold-base/10 text-gold-base"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 15,
+                  delay: i * 0.15 + 0.3,
+                }}
+              >
+                {detail.icon}
+              </motion.div>
+              <div className="relative">
+                <p className="text-cream-muted text-xs mb-1 font-light tracking-wide">
+                  {detail.label}
+                </p>
+                <p className="font-body text-lg md:text-xl text-cream-light font-medium">
+                  {detail.value}
+                </p>
+              </div>
+            </>
+          );
+
+          if ("href" in detail) {
+            return (
+              <motion.a
+                key={detail.label}
+                href={detail.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${detail.label}: ${detail.value}`}
+                className={`${cardClassName} transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-base`}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                  delay: i * 0.15,
+                }}
+              >
+                {content}
+              </motion.a>
+            );
+          }
+
+          return (
             <motion.div
-              className="relative shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gold-base/10 text-gold-base"
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
+              key={detail.label}
+              className={cardClassName}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{
-                type: "spring",
-                stiffness: 200,
-                damping: 15,
-                delay: i * 0.15 + 0.3,
+                duration: 0.8,
+                ease: "easeOut",
+                delay: i * 0.15,
               }}
             >
-              {detail.icon}
+              {content}
             </motion.div>
-            <div className="relative">
-              <p className="text-cream-muted text-xs mb-1 font-light tracking-wide">
-                {detail.label}
-              </p>
-              <p className="font-body text-lg md:text-xl text-cream-light font-medium">
-                {detail.value}
-              </p>
-            </div>
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
