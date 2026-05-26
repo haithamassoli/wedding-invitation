@@ -158,6 +158,14 @@
   font-size: 1rem;
 }
 
+.hadith {
+  margin: 0.7rem 0 0;
+  color: rgba(57, 43, 27, 0.82);
+  font-size: clamp(1rem, 2.3vw, 1.25rem);
+  line-height: 1.9;
+  text-align: center;
+}
+
 .detailsGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

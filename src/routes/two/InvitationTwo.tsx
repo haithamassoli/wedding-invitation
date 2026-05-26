@@ -222,6 +222,7 @@ export default function InvitationTwo() {
         <section className={styles.panel} data-panel>
           <GoldOrnament />
           <p className={styles.verse}>{CONTENT.quranVerse}</p>
+          <p className={styles.hadith}>{CONTENT.propheticHadith}</p>
           <p className={styles.reference}>{CONTENT.quranReference}</p>
         </section>
 

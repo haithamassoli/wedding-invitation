@@ -297,6 +297,7 @@ export default function InvitationThree() {
       <section className="threeInvitation__section" aria-label="آية قرآنية">
         <article className="threeInvitation__card threeInvitation__verse">
           <p>{CONTENT.quranVerse}</p>
+          <p className="threeInvitation__hadith">{CONTENT.propheticHadith}</p>
           <span>{CONTENT.quranReference}</span>
         </article>
       </section>

@@ -229,6 +229,7 @@ export default function InvitationOne() {
       <section className="oneInvitation__section" aria-label="آية قرآنية">
         <article className="oneInvitation__panel oneInvitation__verse" data-one-reveal>
           <p>{CONTENT.quranVerse}</p>
+          <p className="oneInvitation__hadith">{CONTENT.propheticHadith}</p>
           <span>{CONTENT.quranReference}</span>
         </article>
       </section>

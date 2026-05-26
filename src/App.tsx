@@ -12,5 +12,5 @@ export default function App() {
   if (path === "/2") route = <InvitationTwo />;
   if (path === "/3") route = <InvitationThree />;
 
-  return <Suspense fallback={<main dir="rtl">جارٍ التحميل</main>}>{route}</Suspense>;
+  return <Suspense>{route}</Suspense>;
 }

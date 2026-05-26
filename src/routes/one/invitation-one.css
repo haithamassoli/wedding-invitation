@@ -125,6 +125,13 @@
   line-height: 1.8;
 }
 
+.oneInvitation__verse .oneInvitation__hadith {
+  margin-top: 1rem;
+  color: rgba(250, 247, 242, 0.86);
+  font-size: clamp(1.05rem, 2.6vw, 1.55rem);
+  line-height: 1.9;
+}
+
 .oneInvitation__details {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
