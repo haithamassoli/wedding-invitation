@@ -244,7 +244,10 @@ export default function InvitationOne() {
           </div>
           <div className="oneInvitation__detailItem oneInvitation__detailItem--location">
             <span>{CONTENT.locationLabel}</span>
-            <a href={CONTENT.locationMapUrl} target="_blank" rel="noreferrer">{CONTENT.locationValue}</a>
+            <strong>{CONTENT.locationValue}</strong>
+            <a className="oneInvitation__mapButton" href={CONTENT.locationMapUrl} target="_blank" rel="noreferrer">
+              فتح الموقع في خرائط Google
+            </a>
           </div>
         </article>
 
