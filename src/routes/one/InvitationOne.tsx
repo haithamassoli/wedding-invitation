@@ -27,7 +27,9 @@ function createStarLine(radius: number) {
   return new THREE.BufferGeometry().setFromPoints(points);
 }
 
-function useCelestialScene(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
+function useCelestialScene(
+  canvasRef: React.RefObject<HTMLCanvasElement | null>,
+) {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -59,15 +61,25 @@ function useCelestialScene(canvasRef: React.RefObject<HTMLCanvasElement | null>)
       starPositions[i * 3] = Math.cos(angle) * radius;
       starPositions[i * 3 + 1] = (Math.random() - 0.5) * 12;
       starPositions[i * 3 + 2] = -10 + Math.random() * 12;
-      color.setHSL(Math.random() > 0.62 ? 0.12 : 0.43, 0.54, 0.5 + Math.random() * 0.28);
+      color.setHSL(
+        Math.random() > 0.62 ? 0.12 : 0.43,
+        0.54,
+        0.5 + Math.random() * 0.28,
+      );
       starColors[i * 3] = color.r;
       starColors[i * 3 + 1] = color.g;
       starColors[i * 3 + 2] = color.b;
     }
 
     const starGeometry = new THREE.BufferGeometry();
-    starGeometry.setAttribute("position", new THREE.BufferAttribute(starPositions, 3));
-    starGeometry.setAttribute("color", new THREE.BufferAttribute(starColors, 3));
+    starGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(starPositions, 3),
+    );
+    starGeometry.setAttribute(
+      "color",
+      new THREE.BufferAttribute(starColors, 3),
+    );
     const starMaterial = new THREE.PointsMaterial({
       size: 0.035,
       vertexColors: true,
@@ -91,7 +103,11 @@ function useCelestialScene(canvasRef: React.RefObject<HTMLCanvasElement | null>)
       motifGeometries.push(geometry);
       const motif = new THREE.LineLoop(geometry, motifMaterial);
       const angle = (i / 9) * Math.PI * 2;
-      motif.position.set(Math.cos(angle) * (2.2 + i * 0.34), Math.sin(angle) * (1.45 + i * 0.18), -2.8 - i * 0.22);
+      motif.position.set(
+        Math.cos(angle) * (2.2 + i * 0.34),
+        Math.sin(angle) * (1.45 + i * 0.18),
+        -2.8 - i * 0.22,
+      );
       motif.rotation.z = i * 0.34;
       motif.scale.setScalar(0.7 + (i % 3) * 0.28);
       motifs.push(motif);
@@ -112,7 +128,10 @@ function useCelestialScene(canvasRef: React.RefObject<HTMLCanvasElement | null>)
     };
 
     const updateScroll = () => {
-      const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const maxScroll = Math.max(
+        document.documentElement.scrollHeight - window.innerHeight,
+        1,
+      );
       scrollProgress = window.scrollY / maxScroll;
     };
 
@@ -165,7 +184,9 @@ export default function InvitationOne() {
   const cardsRef = useRef<HTMLElement | null>(null);
   const guestName = useGuestName();
   const countdown = useCountdown();
-  const greeting = guestName ? CONTENT.greetingPersonal(guestName) : CONTENT.greetingGeneral;
+  const greeting = guestName
+    ? CONTENT.greetingPersonal(guestName)
+    : CONTENT.greetingGeneral;
 
   useCelestialScene(canvasRef);
 
@@ -182,23 +203,25 @@ export default function InvitationOne() {
         stagger: 0.12,
       });
 
-      gsap.utils.toArray<HTMLElement>("[data-one-reveal]").forEach((element) => {
-        gsap.fromTo(
-          element,
-          { autoAlpha: 0, y: 54, scale: 0.98 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            scale: 1,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: element,
-              start: "top 82%",
+      gsap.utils
+        .toArray<HTMLElement>("[data-one-reveal]")
+        .forEach((element) => {
+          gsap.fromTo(
+            element,
+            { autoAlpha: 0, y: 54, scale: 0.98 },
+            {
+              autoAlpha: 1,
+              y: 0,
+              scale: 1,
+              duration: 1,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: element,
+                start: "top 82%",
+              },
             },
-          },
-        );
-      });
+          );
+        });
     }, root);
 
     return () => context.revert();
@@ -212,56 +235,63 @@ export default function InvitationOne() {
   ] as const;
 
   const scrollToCards = () => {
-    cardsRef.current?.scrollIntoView({ behavior: isReducedMotion() ? "auto" : "smooth" });
+    cardsRef.current?.scrollIntoView({
+      behavior: isReducedMotion() ? "auto" : "smooth",
+    });
   };
 
   return (
     <main className="oneInvitation" dir="rtl" ref={rootRef}>
       <canvas className="oneInvitation__canvas" ref={canvasRef} />
 
-      <section className="oneInvitation__section oneInvitation__hero" aria-label="دعوة الزفاف">
-        <p className="oneInvitation__bismillah" data-one-hero>{CONTENT.bismillah}</p>
+      <section
+        className="oneInvitation__section oneInvitation__hero"
+        aria-label="دعوة الزفاف"
+      >
+        <p className="oneInvitation__bismillah" data-one-hero>
+          {CONTENT.bismillah}
+        </p>
         <h1 className="oneInvitation__names" data-one-hero>
           <span>{CONTENT.groomName}</span>
           <small>{CONTENT.andWord}</small>
           <span>{CONTENT.brideName}</span>
         </h1>
-        <p className="oneInvitation__greeting" data-one-hero>{greeting}</p>
+        <p className="oneInvitation__greeting" data-one-hero>
+          {greeting}
+        </p>
         <div className="oneInvitation__invitationLine" data-one-hero>
           <p className="oneInvitation__kicker">ندعوكم لحضور حفل زفافنا</p>
           <span>سائلين الله أن يكون زواجًا مباركًا</span>
         </div>
-        <button className="oneInvitation__hint" type="button" onClick={scrollToCards} data-one-hero>
+        <button
+          className="oneInvitation__hint"
+          type="button"
+          onClick={scrollToCards}
+          data-one-hero
+        >
           {CONTENT.scrollHint}
         </button>
       </section>
 
-      <section className="oneInvitation__cards" aria-label="تفاصيل الدعوة" ref={cardsRef}>
-        <article className="oneInvitation__panel oneInvitation__verse" data-one-reveal>
+      <section
+        className="oneInvitation__cards"
+        aria-label="تفاصيل الدعوة"
+        ref={cardsRef}
+      >
+        <article
+          className="oneInvitation__panel oneInvitation__verse"
+          data-one-reveal
+        >
           <p>{CONTENT.quranVerse}</p>
-          <p className="oneInvitation__hadith">{CONTENT.propheticHadith}</p>
           <span>{CONTENT.quranReference}</span>
+          <p className="oneInvitation__hadith">{CONTENT.propheticHadith}</p>
         </article>
 
-        <article className="oneInvitation__panel oneInvitation__details" data-one-reveal aria-label="تفاصيل الحفل">
-          <div className="oneInvitation__detailItem">
-            <span>{CONTENT.dateLabel}</span>
-            <strong>{CONTENT.dateValue}</strong>
-          </div>
-          <div className="oneInvitation__detailItem">
-            <span>{CONTENT.timeLabel}</span>
-            <strong>{CONTENT.timeValue}</strong>
-          </div>
-          <div className="oneInvitation__detailItem oneInvitation__detailItem--location">
-            <span>{CONTENT.locationLabel}</span>
-            <strong>{CONTENT.locationValue}</strong>
-            <a className="oneInvitation__mapButton" href={CONTENT.locationMapUrl} target="_blank" rel="noreferrer">
-              فتح الموقع في خرائط Google
-            </a>
-          </div>
-        </article>
-
-        <article className="oneInvitation__panel oneInvitation__countdownCard" data-one-reveal aria-label="العد التنازلي">
+        <article
+          className="oneInvitation__panel oneInvitation__countdownCard"
+          data-one-reveal
+          aria-label="العد التنازلي"
+        >
           {countdown.isExpired ? (
             <p className="oneInvitation__expired">{CONTENT.countdownExpired}</p>
           ) : (
@@ -276,13 +306,48 @@ export default function InvitationOne() {
           )}
         </article>
 
-        <article className="oneInvitation__panel oneInvitation__instructions" data-one-reveal aria-label="تنبيهات الحفل">
+        <article
+          className="oneInvitation__panel oneInvitation__details"
+          data-one-reveal
+          aria-label="تفاصيل الحفل"
+        >
+          <div className="oneInvitation__detailItem">
+            <span>{CONTENT.dateLabel}</span>
+            <strong>{CONTENT.dateValue}</strong>
+          </div>
+          <div className="oneInvitation__detailItem">
+            <span>{CONTENT.timeLabel}</span>
+            <strong>{CONTENT.timeValue}</strong>
+          </div>
+          <div className="oneInvitation__detailItem oneInvitation__detailItem--location">
+            <span>{CONTENT.locationLabel}</span>
+            <strong>{CONTENT.locationValue}</strong>
+            <a
+              className="oneInvitation__mapButton"
+              href={CONTENT.locationMapUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              فتح الموقع في خرائط Google
+            </a>
+          </div>
+        </article>
+
+        <article
+          className="oneInvitation__panel oneInvitation__instructions"
+          data-one-reveal
+          aria-label="تنبيهات الحفل"
+        >
           <h2>{CONTENT.instructionsTitle}</h2>
           <p>{CONTENT.noMusic}</p>
           <p>{CONTENT.noPhotography}</p>
         </article>
 
-        <article className="oneInvitation__panel oneInvitation__closing" data-one-reveal aria-label="دعاء الختام">
+        <article
+          className="oneInvitation__panel oneInvitation__closing"
+          data-one-reveal
+          aria-label="دعاء الختام"
+        >
           <p>{CONTENT.closingPrayer}</p>
           <span>{CONTENT.closingWish}</span>
         </article>
