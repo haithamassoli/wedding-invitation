@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
 import { CONTENT } from "../../constants/content";
 import { useCountdown } from "../../hooks/useCountdown";
-import { useGuestName } from "../../hooks/useGuestName";
+import { useGuestGender, useGuestName } from "../../hooks/useGuestName";
 import "./invitation-three.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -37,9 +37,10 @@ export default function InvitationThree() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const rootRef = useRef<HTMLDivElement | null>(null);
   const guestName = useGuestName();
+  const guestGender = useGuestGender();
   const countdown = useCountdown();
   const greeting = guestName
-    ? CONTENT.greetingPersonal(guestName)
+    ? CONTENT.greetingPersonal(guestName, guestGender)
     : CONTENT.greetingGeneral;
 
   useEffect(() => {
@@ -276,7 +277,6 @@ export default function InvitationThree() {
   return (
     <main className="threeInvitation" dir="rtl" ref={rootRef}>
       <canvas
-        aria-hidden="true"
         className="threeInvitation__canvas"
         ref={canvasRef}
       />

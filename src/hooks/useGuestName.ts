@@ -1,3 +1,5 @@
+import type { GuestGender } from "../constants/content";
+
 export function useGuestName(): string | null {
   const params = new URLSearchParams(window.location.search);
   const name = params.get("for");
@@ -10,4 +12,13 @@ export function useGuestName(): string | null {
   };
 
   return knownArabicNames[decodedName.toLowerCase()] ?? decodedName;
+}
+
+export function useGuestGender(): GuestGender {
+  const params = new URLSearchParams(window.location.search);
+  const gender = params.get("gender");
+
+  if (gender === "male" || gender === "female") return gender;
+
+  return "neutral";
 }

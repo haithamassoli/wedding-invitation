@@ -1,7 +1,16 @@
+export type GuestGender = "male" | "female" | "neutral";
+
+const GUEST_TITLES: Record<GuestGender, string> = {
+  male: "السيد",
+  female: "السيدة",
+  neutral: "السيد / السيدة",
+};
+
 export const CONTENT = {
   bismillah: "بِــسْمِ اللَّهِ الرَّحْمَــنِ الرَّحِيــمِ",
   weddingInvitation: "دعــوة زفــاف",
-  greetingPersonal: (name: string) => `يـا ${name}`,
+  greetingPersonal: (name: string, gender: GuestGender = "neutral") =>
+    `${GUEST_TITLES[gender]}: ${name}`,
   greetingGeneral: "مكرميــن",
   scrollHint: "اسحب للأسفــل",
 

@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
 import { CONTENT } from "../../constants/content";
 import { useCountdown } from "../../hooks/useCountdown";
-import { useGuestName } from "../../hooks/useGuestName";
+import { useGuestGender, useGuestName } from "../../hooks/useGuestName";
 import "./invitation-one.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -183,10 +183,12 @@ export default function InvitationOne() {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<HTMLElement | null>(null);
   const guestName = useGuestName();
+  const guestGender = useGuestGender();
   const countdown = useCountdown();
-  const greeting = guestName
-    ? CONTENT.greetingPersonal(guestName)
-    : CONTENT.greetingGeneral;
+  const greeting = CONTENT.greetingPersonal(
+    guestName ?? "ــــــــــــــــ",
+    guestGender,
+  );
 
   useCelestialScene(canvasRef);
 
@@ -261,14 +263,9 @@ export default function InvitationOne() {
           <small>{CONTENT.andWord}</small>
           <span>{CONTENT.brideName}</span>
         </h1>
-        {/* <p className="oneInvitation__greeting" data-one-hero>
-          {greeting}
-        </p> */}
         <div className="oneInvitation__invitationLine" data-one-hero>
-          <p className="oneInvitation__kicker">
-            بدعوتكــم {greeting} لحضــور حفــل زفــافهم
-          </p>
-          <span>سائلين الله أن يكــون زواجًــا مبــاركًا</span>
+          <p className="oneInvitation__kicker">بدعوة {greeting}</p>
+          <span>لحضور حفل زفافهما، سائلين الله أن يكون زواجاً مباركاً.</span>
         </div>
         <button
           className="oneInvitation__hint"

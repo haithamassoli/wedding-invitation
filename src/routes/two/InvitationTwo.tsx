@@ -3,7 +3,7 @@ import gsap from "gsap";
 import * as THREE from "three";
 import { CONTENT } from "../../constants/content";
 import { useCountdown } from "../../hooks/useCountdown";
-import { useGuestName } from "../../hooks/useGuestName";
+import { useGuestGender, useGuestName } from "../../hooks/useGuestName";
 import styles from "./InvitationTwo.module.css";
 
 const reducedMotionQuery = "(prefers-reduced-motion: reduce)";
@@ -134,9 +134,10 @@ export default function InvitationTwo() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const rootRef = useRef<HTMLDivElement | null>(null);
   const guestName = useGuestName();
+  const guestGender = useGuestGender();
   const countdown = useCountdown();
   const greeting = guestName
-    ? CONTENT.greetingPersonal(guestName)
+    ? CONTENT.greetingPersonal(guestName, guestGender)
     : CONTENT.greetingGeneral;
 
   useInvitationScene(canvasRef);
@@ -192,7 +193,7 @@ export default function InvitationTwo() {
   return (
     <div ref={rootRef} className={styles.shell} dir="rtl">
       <section className={styles.hero} aria-label="دعوة الزفاف الذهبية">
-        <canvas ref={canvasRef} className={styles.scene} aria-hidden="true" />
+        <canvas ref={canvasRef} className={styles.scene} />
         <div className={styles.veil} />
         <div className={styles.scrollCard}>
           <div data-hero-piece>
