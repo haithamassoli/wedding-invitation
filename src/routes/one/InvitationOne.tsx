@@ -216,13 +216,16 @@ export default function InvitationOne() {
 
       <section className="oneInvitation__section oneInvitation__hero" aria-label="دعوة الزفاف">
         <p className="oneInvitation__bismillah" data-one-hero>{CONTENT.bismillah}</p>
-        <p className="oneInvitation__kicker" data-one-hero>{CONTENT.weddingInvitation}</p>
         <h1 className="oneInvitation__names" data-one-hero>
           <span>{CONTENT.groomName}</span>
           <small>{CONTENT.andWord}</small>
           <span>{CONTENT.brideName}</span>
         </h1>
         <p className="oneInvitation__greeting" data-one-hero>{greeting}</p>
+        <div className="oneInvitation__invitationLine" data-one-hero>
+          <p className="oneInvitation__kicker">ندعوكم لحضور حفل زفافنا</p>
+          <span>سائلين الله أن يكون زواجًا مباركًا</span>
+        </div>
         <p className="oneInvitation__hint" data-one-hero>{CONTENT.scrollHint}</p>
       </section>
 

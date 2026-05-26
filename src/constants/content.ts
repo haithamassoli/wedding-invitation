@@ -8,16 +8,16 @@ export const CONTENT = {
   quranVerse:
     "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ",
   propheticHadith: 'وقال النبي ﷺ: "تزوجوا فإِنِّي مُكاثِرٌ بكم الأمَمَ"',
-  quranReference: "سورة الروم - آية ٢١",
+  quranReference: "سورة الروم - آية 21",
 
   groomName: "هيثــم",
   brideName: "كريــمته",
   andWord: "و",
 
   dateLabel: "التــاريــخ",
-  dateValue: "الجمعة ٢٩ مايو ٢٠٢٦",
-  timeLabel: "الوقت",
-  timeValue: "من ٧:٣٠ مساءً إلى ٩:٣٠ مساءً",
+  dateValue: "الجمعــة 29 مــايــو 2026",
+  timeLabel: "الوقــت",
+  timeValue: "من 7:30 مســاءً إلى 9:30 مســاءً",
   locationLabel: "المكــان",
   locationValue: "مجمع النقابــات المهنية - إربــد",
   locationMapUrl: "https://maps.app.goo.gl/qdsHMwzWVrqeij6C9",
