@@ -215,7 +215,7 @@
 }
 
 .oneInvitation__verse {
-  grid-column: 1 / span 7;
+  grid-column: 1 / -1;
   text-align: center;
 }
 
@@ -243,7 +243,7 @@
 }
 
 .oneInvitation__details {
-  grid-column: 8 / span 5;
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
@@ -311,13 +311,13 @@
 
 .oneInvitation__countdown {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.85rem;
   text-align: center;
 }
 
 .oneInvitation__countdownCard {
-  grid-column: 2 / span 6;
+  grid-column: 1 / -1;
 }
 
 .oneInvitation__countdown strong {
@@ -343,12 +343,12 @@
 }
 
 .oneInvitation__instructions {
-  grid-column: 8 / span 4;
+  grid-column: 1 / -1;
   align-self: start;
 }
 
 .oneInvitation__closing {
-  grid-column: 4 / span 7;
+  grid-column: 1 / -1;
 }
 
 .oneInvitation__instructions h2 {
