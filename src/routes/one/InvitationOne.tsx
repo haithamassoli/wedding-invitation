@@ -162,6 +162,7 @@ function useCelestialScene(canvasRef: React.RefObject<HTMLCanvasElement | null>)
 export default function InvitationOne() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const rootRef = useRef<HTMLDivElement | null>(null);
+  const cardsRef = useRef<HTMLElement | null>(null);
   const guestName = useGuestName();
   const countdown = useCountdown();
   const greeting = guestName ? CONTENT.greetingPersonal(guestName) : CONTENT.greetingGeneral;
@@ -210,6 +211,10 @@ export default function InvitationOne() {
     [CONTENT.countdownSeconds, countdown.seconds],
   ] as const;
 
+  const scrollToCards = () => {
+    cardsRef.current?.scrollIntoView({ behavior: isReducedMotion() ? "auto" : "smooth" });
+  };
+
   return (
     <main className="oneInvitation" dir="rtl" ref={rootRef}>
       <canvas className="oneInvitation__canvas" ref={canvasRef} />
@@ -226,10 +231,12 @@ export default function InvitationOne() {
           <p className="oneInvitation__kicker">ندعوكم لحضور حفل زفافنا</p>
           <span>سائلين الله أن يكون زواجًا مباركًا</span>
         </div>
-        <p className="oneInvitation__hint" data-one-hero>{CONTENT.scrollHint}</p>
+        <button className="oneInvitation__hint" type="button" onClick={scrollToCards} data-one-hero>
+          {CONTENT.scrollHint}
+        </button>
       </section>
 
-      <section className="oneInvitation__cards" aria-label="تفاصيل الدعوة">
+      <section className="oneInvitation__cards" aria-label="تفاصيل الدعوة" ref={cardsRef}>
         <article className="oneInvitation__panel oneInvitation__verse" data-one-reveal>
           <p>{CONTENT.quranVerse}</p>
           <p className="oneInvitation__hadith">{CONTENT.propheticHadith}</p>

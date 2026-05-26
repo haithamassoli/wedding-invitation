@@ -121,8 +121,25 @@
 }
 
 .oneInvitation__hint {
+  padding: 0.45rem 0.85rem;
+  border: 0;
+  border-radius: 999rem;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
   margin-top: clamp(2rem, 7vw, 5rem);
   font-size: 1rem;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.oneInvitation__hint:hover {
+  background: rgba(232, 212, 139, 0.1);
+  transform: translateY(2px);
+}
+
+.oneInvitation__hint:focus-visible {
+  outline: 2px solid #e8d48b;
+  outline-offset: 0.25rem;
 }
 
 .oneInvitation__cards {

@@ -57,3 +57,11 @@
   --color-cream-light: #faf7f2;
   --color-cream-muted: #d4cfc7;
 }
+
+html {
+  scrollbar-color: var(--color-gold-light) transparent;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
