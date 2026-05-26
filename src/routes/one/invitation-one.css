@@ -429,6 +429,38 @@
   }
 }
 
+@media (min-width: 68.01rem) {
+  .oneInvitation__names {
+    margin: 2rem 0;
+    font-size: clamp(4rem, 10vw, 8rem);
+  }
+
+  .oneInvitation__cards {
+    width: min(100%, 64rem);
+    padding-top: 5.5rem;
+    padding-bottom: 6rem;
+  }
+
+  .oneInvitation__panel {
+    padding: clamp(1.35rem, 2vw, 2rem);
+  }
+
+  .oneInvitation__verse p,
+  .oneInvitation__closing p {
+    font-size: clamp(1.45rem, 2.8vw, 2.35rem);
+  }
+
+  .oneInvitation__details strong,
+  .oneInvitation__details a {
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  }
+
+  .oneInvitation__countdown strong,
+  .oneInvitation__instructions h2 {
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .oneInvitation *,
   .oneInvitation *::before,
