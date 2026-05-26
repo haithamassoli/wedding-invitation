@@ -1,8 +1,8 @@
 export const CONTENT = {
   bismillah: "بِــسْمِ اللَّهِ الرَّحْمَــنِ الرَّحِيــمِ",
   weddingInvitation: "دعــوة زفــاف",
-  greetingPersonal: (name: string) => `حيّــاك الله يـا ${name}`,
-  greetingGeneral: "حيّــاكم الله",
+  greetingPersonal: (name: string) => `يـا ${name}`,
+  greetingGeneral: "مكرميــن",
   scrollHint: "اسحب للأسفــل",
 
   quranVerse:

@@ -250,18 +250,25 @@ export default function InvitationOne() {
       >
         <p className="oneInvitation__bismillah" data-one-hero>
           {CONTENT.bismillah}
+          <div className="oneInvitation__introText" data-one-hero>
+            <p>بكل ما تحمله مشاعرنا من حــب ولأن فرحتنا تكتمل بمن نحــب</p>
+            <strong>يتشــرف</strong>
+          </div>
         </p>
+
         <h1 className="oneInvitation__names" data-one-hero>
           <span>{CONTENT.groomName}</span>
           <small>{CONTENT.andWord}</small>
           <span>{CONTENT.brideName}</span>
         </h1>
-        <p className="oneInvitation__greeting" data-one-hero>
+        {/* <p className="oneInvitation__greeting" data-one-hero>
           {greeting}
-        </p>
+        </p> */}
         <div className="oneInvitation__invitationLine" data-one-hero>
-          <p className="oneInvitation__kicker">ندعوكم لحضور حفل زفافنا</p>
-          <span>سائلين الله أن يكون زواجًا مباركًا</span>
+          <p className="oneInvitation__kicker">
+            بدعوتكــم {greeting} لحضــور حفــل زفــافهم
+          </p>
+          <span>سائلين الله أن يكــون زواجًــا مبــاركًا</span>
         </div>
         <button
           className="oneInvitation__hint"

@@ -96,10 +96,28 @@
   line-height: 1.7;
 }
 
+.oneInvitation__introText {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: clamp(1.1rem, 3vw, 2rem);
+  color: rgba(250, 247, 242, 0.88);
+  font-size: clamp(1rem, 2.6vw, 1.45rem);
+  line-height: 1.8;
+}
+
+.oneInvitation__introText p {
+  margin: 0;
+}
+
+.oneInvitation__introText strong {
+  color: #e8d48b;
+  font-size: clamp(1.05rem, 2.8vw, 1.6rem);
+}
+
 .oneInvitation__names {
   display: grid;
   gap: 0.35rem;
-  margin: clamp(1.4rem, 5vw, 3rem) 0;
+  /* margin: clamp(1.4rem, 5vw, 3rem) 0; */
   font-size: clamp(4rem, 17vw, 12rem);
   font-weight: 900;
   line-height: 0.88;
@@ -129,7 +147,10 @@
   font: inherit;
   margin-top: clamp(2rem, 7vw, 5rem);
   font-size: 1rem;
-  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
 }
 
 .oneInvitation__hint:hover {
