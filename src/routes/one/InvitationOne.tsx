@@ -185,10 +185,9 @@ export default function InvitationOne() {
   const guestName = useGuestName();
   const guestGender = useGuestGender();
   const countdown = useCountdown();
-  const greeting = CONTENT.greetingPersonal(
-    guestName ?? "ــــــــــــــــ",
-    guestGender,
-  );
+  const greeting = guestName
+    ? `بدعوة ${CONTENT.greetingPersonal(guestName, guestGender)}`
+    : "بدعوتكم مكرمين";
 
   useCelestialScene(canvasRef);
 
@@ -264,7 +263,7 @@ export default function InvitationOne() {
           <span>{CONTENT.brideName}</span>
         </h1>
         <div className="oneInvitation__invitationLine" data-one-hero>
-          <p className="oneInvitation__kicker">بدعوة {greeting}</p>
+          <p className="oneInvitation__kicker">{greeting}</p>
           <span>لحضور حفل زفافهما، سائلين الله أن يكون زواجاً مباركاً.</span>
         </div>
         <button
