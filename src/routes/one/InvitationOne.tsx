@@ -212,7 +212,7 @@ export default function InvitationOne() {
 
   return (
     <main className="oneInvitation" dir="rtl" ref={rootRef}>
-      <canvas className="oneInvitation__canvas" ref={canvasRef} aria-hidden="true" />
+      <canvas className="oneInvitation__canvas" ref={canvasRef} />
 
       <section className="oneInvitation__section oneInvitation__hero" aria-label="دعوة الزفاف">
         <p className="oneInvitation__bismillah" data-one-hero>{CONTENT.bismillah}</p>
@@ -226,33 +226,29 @@ export default function InvitationOne() {
         <p className="oneInvitation__hint" data-one-hero>{CONTENT.scrollHint}</p>
       </section>
 
-      <section className="oneInvitation__section" aria-label="آية قرآنية">
+      <section className="oneInvitation__cards" aria-label="تفاصيل الدعوة">
         <article className="oneInvitation__panel oneInvitation__verse" data-one-reveal>
           <p>{CONTENT.quranVerse}</p>
           <p className="oneInvitation__hadith">{CONTENT.propheticHadith}</p>
           <span>{CONTENT.quranReference}</span>
         </article>
-      </section>
 
-      <section className="oneInvitation__section" aria-label="تفاصيل الحفل">
-        <article className="oneInvitation__panel oneInvitation__details" data-one-reveal>
-          <div>
+        <article className="oneInvitation__panel oneInvitation__details" data-one-reveal aria-label="تفاصيل الحفل">
+          <div className="oneInvitation__detailItem">
             <span>{CONTENT.dateLabel}</span>
             <strong>{CONTENT.dateValue}</strong>
           </div>
-          <div>
+          <div className="oneInvitation__detailItem">
             <span>{CONTENT.timeLabel}</span>
             <strong>{CONTENT.timeValue}</strong>
           </div>
-          <div>
+          <div className="oneInvitation__detailItem oneInvitation__detailItem--location">
             <span>{CONTENT.locationLabel}</span>
             <a href={CONTENT.locationMapUrl} target="_blank" rel="noreferrer">{CONTENT.locationValue}</a>
           </div>
         </article>
-      </section>
 
-      <section className="oneInvitation__section" aria-label="العد التنازلي">
-        <article className="oneInvitation__panel" data-one-reveal>
+        <article className="oneInvitation__panel oneInvitation__countdownCard" data-one-reveal aria-label="العد التنازلي">
           {countdown.isExpired ? (
             <p className="oneInvitation__expired">{CONTENT.countdownExpired}</p>
           ) : (
@@ -266,18 +262,14 @@ export default function InvitationOne() {
             </div>
           )}
         </article>
-      </section>
 
-      <section className="oneInvitation__section" aria-label="تنبيهات الحفل">
-        <article className="oneInvitation__panel oneInvitation__instructions" data-one-reveal>
+        <article className="oneInvitation__panel oneInvitation__instructions" data-one-reveal aria-label="تنبيهات الحفل">
           <h2>{CONTENT.instructionsTitle}</h2>
           <p>{CONTENT.noMusic}</p>
           <p>{CONTENT.noPhotography}</p>
         </article>
-      </section>
 
-      <section className="oneInvitation__section" aria-label="دعاء الختام">
-        <article className="oneInvitation__panel oneInvitation__closing" data-one-reveal>
+        <article className="oneInvitation__panel oneInvitation__closing" data-one-reveal aria-label="دعاء الختام">
           <p>{CONTENT.closingPrayer}</p>
           <span>{CONTENT.closingWish}</span>
         </article>
