@@ -1,0 +1,252 @@
+.threeInvitation {
+  position: relative;
+  min-height: 600vh;
+  overflow-x: clip;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(189, 145, 73, 0.2), transparent 28rem),
+    radial-gradient(circle at 15% 70%, rgba(64, 111, 105, 0.22), transparent 26rem),
+    linear-gradient(180deg, #05050a 0%, #0e1115 48%, #060609 100%);
+  color: #fff4d5;
+  font-family: "Thmanyah Sans", system-ui, sans-serif;
+  isolation: isolate;
+}
+
+.threeInvitation::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(rgba(255, 244, 213, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 244, 213, 0.035) 1px, transparent 1px);
+  background-size: 4.5rem 4.5rem;
+  mask-image: radial-gradient(circle at center, #000 0%, transparent 72%);
+}
+
+.threeInvitation__canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  display: block;
+}
+
+.threeInvitation__section {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 4vw, 4.5rem);
+}
+
+.threeInvitation__hero {
+  text-align: center;
+}
+
+.threeInvitation__heroSeal {
+  position: relative;
+  width: clamp(5rem, 18vw, 10rem);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  margin: 0 auto clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid rgba(245, 217, 154, 0.55);
+  border-radius: 32% 68% 36% 64% / 64% 38% 62% 36%;
+  background: radial-gradient(circle, rgba(245, 217, 154, 0.2), rgba(245, 217, 154, 0.03));
+  box-shadow: 0 0 5rem rgba(216, 188, 119, 0.28);
+}
+
+.threeInvitation__heroSeal::before,
+.threeInvitation__heroSeal::after {
+  position: absolute;
+  width: 42%;
+  aspect-ratio: 1;
+  border: 1px solid currentColor;
+  content: "";
+  color: #f5d99a;
+  transform: rotate(45deg);
+}
+
+.threeInvitation__heroSeal::after {
+  width: 26%;
+  transform: rotate(0deg);
+}
+
+.threeInvitation__eyebrow,
+.threeInvitation__hint,
+.threeInvitation__card span,
+.threeInvitation__card a {
+  color: #d8bc77;
+}
+
+.threeInvitation__eyebrow {
+  margin: 0 0 1rem;
+  font-size: clamp(1rem, 2.5vw, 1.45rem);
+  letter-spacing: 0.04em;
+}
+
+.threeInvitation h1 {
+  margin: 0;
+  font-size: clamp(4rem, 16vw, 12rem);
+  font-weight: 400;
+  line-height: 0.92;
+  text-shadow: 0 0 2rem rgba(245, 217, 154, 0.18);
+}
+
+.threeInvitation__greeting {
+  margin: clamp(1.25rem, 4vw, 2.25rem) 0 0;
+  color: #fff9e8;
+  font-size: clamp(1.35rem, 4vw, 2.4rem);
+}
+
+.threeInvitation__names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 2.6vw, 1.5rem);
+  margin-top: clamp(1.25rem, 4vw, 2.5rem);
+  font-size: clamp(2.25rem, 9vw, 7rem);
+  line-height: 1;
+}
+
+.threeInvitation__names small {
+  color: #8fb8a9;
+  font-size: 0.42em;
+}
+
+.threeInvitation__hint {
+  margin-top: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+}
+
+.threeInvitation__card {
+  width: min(100%, 56rem);
+  padding: clamp(1.35rem, 5vw, 4rem);
+  border: 1px solid rgba(245, 217, 154, 0.24);
+  border-radius: clamp(1.25rem, 4vw, 3rem);
+  background:
+    linear-gradient(135deg, rgba(255, 244, 213, 0.13), rgba(255, 244, 213, 0.025)),
+    rgba(5, 5, 10, 0.58);
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(18px);
+}
+
+.threeInvitation__verse {
+  text-align: center;
+}
+
+.threeInvitation__verse p,
+.threeInvitation__closing p {
+  margin: 0;
+  color: #fff9e8;
+  font-size: clamp(1.45rem, 4.4vw, 3.5rem);
+  line-height: 1.95;
+}
+
+.threeInvitation__verse span,
+.threeInvitation__closing span {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+}
+
+.threeInvitation__details {
+  display: grid;
+  gap: 1rem;
+}
+
+.threeInvitation__details div {
+  display: grid;
+  gap: 0.45rem;
+  padding: clamp(1rem, 3vw, 1.6rem);
+  border: 1px solid rgba(255, 244, 213, 0.12);
+  border-radius: 1.4rem;
+  background: rgba(255, 244, 213, 0.045);
+}
+
+.threeInvitation__details strong,
+.threeInvitation__details a {
+  color: #fff9e8;
+  font-size: clamp(1.25rem, 3.8vw, 2.25rem);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.threeInvitation__countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.65rem, 2vw, 1rem);
+  text-align: center;
+}
+
+.threeInvitation__countdown > strong {
+  grid-column: 1 / -1;
+  font-size: clamp(2rem, 7vw, 4.5rem);
+}
+
+.threeInvitation__countdown div {
+  padding: clamp(0.85rem, 3vw, 1.5rem) 0.5rem;
+  border: 1px solid rgba(216, 188, 119, 0.2);
+  border-radius: 1.25rem;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.threeInvitation__countdown strong {
+  display: block;
+  color: #fff9e8;
+  font-size: clamp(1.8rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.threeInvitation__countdown span {
+  display: block;
+  margin-top: 0.7rem;
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
+}
+
+.threeInvitation__instructions {
+  text-align: center;
+}
+
+.threeInvitation__instructions h2 {
+  margin: 0 0 clamp(1.25rem, 4vw, 2.4rem);
+  color: #fff9e8;
+  font-size: clamp(2rem, 7vw, 5rem);
+  font-weight: 400;
+}
+
+.threeInvitation__instructions p {
+  margin: 0.8rem auto;
+  max-width: 34rem;
+  padding: 1rem 1.2rem;
+  border-radius: 999rem;
+  background: rgba(143, 184, 169, 0.11);
+  color: #fff9e8;
+  font-size: clamp(1.15rem, 3.3vw, 1.9rem);
+}
+
+.threeInvitation__closing {
+  margin-bottom: 15vh;
+  text-align: center;
+}
+
+@media (max-width: 42rem) {
+  .threeInvitation__section {
+    padding-inline: 1rem;
+  }
+
+  .threeInvitation__countdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .threeInvitation__card,
+  .threeInvitation__heroSeal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

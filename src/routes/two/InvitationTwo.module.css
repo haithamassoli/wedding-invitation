@@ -1,0 +1,297 @@
+.shell {
+  --ink: #2b2114;
+  --muted: rgba(43, 33, 20, 0.72);
+  --gold: #d6a741;
+  --gold-bright: #ffe7a3;
+  --gold-dark: #8c6420;
+  --paper: #fff7e6;
+  --paper-deep: #ecd49d;
+  min-height: 100svh;
+  direction: rtl;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255, 231, 163, 0.28), transparent 32rem),
+    radial-gradient(circle at 18% 18%, rgba(214, 167, 65, 0.16), transparent 24rem),
+    linear-gradient(145deg, #160f08 0%, #2e1e0c 44%, #120c07 100%);
+  font-family: "Thmanyah Sans", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  isolation: isolate;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.82;
+  z-index: -2;
+}
+
+.veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(to bottom, rgba(18, 12, 7, 0.05), rgba(18, 12, 7, 0.78)),
+    radial-gradient(ellipse at center, transparent 0%, rgba(18, 12, 7, 0.64) 76%);
+}
+
+.scrollCard {
+  width: min(42rem, 100%);
+  padding: clamp(1.35rem, 4vw, 3.5rem) clamp(1rem, 4vw, 3rem);
+  border: 1px solid rgba(255, 231, 163, 0.72);
+  border-radius: 2rem;
+  background:
+    linear-gradient(90deg, rgba(140, 100, 32, 0.2), transparent 12%, transparent 88%, rgba(140, 100, 32, 0.2)),
+    radial-gradient(circle at 50% 0%, rgba(255, 231, 163, 0.38), transparent 16rem),
+    linear-gradient(135deg, rgba(255, 251, 238, 0.96), rgba(255, 244, 211, 0.94));
+  box-shadow:
+    0 2.5rem 7rem rgba(0, 0, 0, 0.46),
+    inset 0 0 0 0.45rem rgba(255, 255, 255, 0.24),
+    inset 0 0 3rem rgba(214, 167, 65, 0.2);
+  text-align: center;
+  transform-origin: center top;
+}
+
+.ornament {
+  width: min(18rem, 76vw);
+  margin: 0 auto 1rem;
+  color: var(--gold-dark);
+  filter: drop-shadow(0 0.35rem 0.55rem rgba(140, 100, 32, 0.22));
+}
+
+.ornament path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  animation: inkDraw 2.8s ease forwards;
+}
+
+.bismillah {
+  margin: 0 0 0.8rem;
+  color: var(--gold-dark);
+  font-size: clamp(1.05rem, 3vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.4vw, 1.22rem);
+}
+
+.names {
+  display: grid;
+  gap: 0.25rem;
+  margin: clamp(1.2rem, 4vw, 2rem) 0;
+  color: #1e160d;
+  font-size: clamp(3.2rem, 14vw, 7.5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  text-shadow: 0 0.28rem 0 rgba(214, 167, 65, 0.18);
+}
+
+.andWord {
+  color: var(--gold-dark);
+  font-size: clamp(1.4rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.guest {
+  margin: 0 auto;
+  max-width: 28rem;
+  color: var(--muted);
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
+  line-height: 1.8;
+}
+
+.hint {
+  margin-top: clamp(1.25rem, 5vw, 2.5rem);
+  color: var(--gold-dark);
+  font-size: 0.95rem;
+}
+
+.content {
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  width: min(48rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 0 0 clamp(2rem, 7vw, 5rem);
+}
+
+.panel {
+  border: 1px solid rgba(255, 231, 163, 0.36);
+  border-radius: 1.6rem;
+  background:
+    linear-gradient(135deg, rgba(255, 247, 230, 0.96), rgba(236, 212, 157, 0.9)),
+    var(--paper);
+  box-shadow: 0 1.4rem 4rem rgba(0, 0, 0, 0.34);
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.verse {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 500;
+  line-height: 2.1;
+  text-align: center;
+}
+
+.reference {
+  margin: 0.8rem 0 0;
+  color: var(--gold-dark);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.detailItem,
+.countItem {
+  border: 1px solid rgba(140, 100, 32, 0.22);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 1rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--gold-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.value {
+  display: block;
+  color: var(--ink);
+  font-size: clamp(1rem, 2.4vw, 1.22rem);
+  line-height: 1.55;
+}
+
+.mapLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.85rem;
+  color: var(--gold-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mapLink:focus-visible {
+  outline: 2px solid var(--gold-dark);
+  outline-offset: 0.25rem;
+  border-radius: 999px;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.countNumber {
+  display: block;
+  color: #1e160d;
+  font-size: clamp(1.55rem, 5vw, 2.65rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.countLabel {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.expired {
+  margin: 0;
+  color: var(--gold-dark);
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  font-weight: 900;
+  text-align: center;
+}
+
+.instructionsTitle {
+  margin: 0 0 1rem;
+  color: var(--gold-dark);
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  text-align: center;
+}
+
+.instructions {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.instructions li {
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 0.95rem 1rem;
+  color: var(--ink);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.closing {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.wish {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  text-align: center;
+}
+
+@keyframes inkDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .detailsGrid,
+  .countdown {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-inline: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ornament path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

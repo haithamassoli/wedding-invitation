@@ -1,28 +1,16 @@
-import { HeroSection } from "./components/HeroSection";
-import { QuranVerse } from "./components/QuranVerse";
-import { NamesSection } from "./components/NamesSection";
-import { EventDetails } from "./components/EventDetails";
-import { CountdownTimer } from "./components/CountdownTimer";
-import { Instructions } from "./components/Instructions";
-import { ClosingSection } from "./components/ClosingSection";
-import { Divider } from "./components/decorative/Divider";
+import { lazy, Suspense } from "react";
+
+const InvitationOne = lazy(() => import("./routes/one/InvitationOne"));
+const InvitationTwo = lazy(() => import("./routes/two/InvitationTwo"));
+const InvitationThree = lazy(() => import("./routes/three/InvitationThree"));
 
 export default function App() {
-  return (
-    <main className="min-h-dvh">
-      <HeroSection />
-      <Divider className="my-4" />
-      <QuranVerse />
-      <Divider className="my-4" />
-      <NamesSection />
-      <Divider className="my-4" />
-      <EventDetails />
-      <Divider className="my-4" />
-      <CountdownTimer />
-      <Divider className="my-4" />
-      <Instructions />
-      <Divider className="my-4" />
-      <ClosingSection />
-    </main>
-  );
+  const path = window.location.pathname.replace(/\/$/, "") || "/1";
+
+  let route = <InvitationOne />;
+
+  if (path === "/2") route = <InvitationTwo />;
+  if (path === "/3") route = <InvitationThree />;
+
+  return <Suspense fallback={<main dir="rtl">جارٍ التحميل</main>}>{route}</Suspense>;
 }
