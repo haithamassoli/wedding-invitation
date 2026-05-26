@@ -117,7 +117,7 @@
 .oneInvitation__names {
   display: grid;
   gap: 0.35rem;
-  /* margin: clamp(1.4rem, 5vw, 3rem) 0; */
+  margin: clamp(1.4rem, 5vw, 3rem) 0;
   font-size: clamp(4rem, 17vw, 12rem);
   font-weight: 900;
   line-height: 0.88;
