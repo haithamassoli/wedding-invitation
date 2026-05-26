@@ -1,0 +1,176 @@
+.createInvitation {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.25rem, 4vw, 4rem);
+  background:
+    radial-gradient(
+      circle at 50% 12%,
+      rgba(232, 212, 139, 0.22),
+      transparent 26rem
+    ),
+    radial-gradient(
+      circle at 12% 78%,
+      rgba(42, 107, 85, 0.36),
+      transparent 24rem
+    ),
+    linear-gradient(180deg, #06150f 0%, #0a1f19 48%, #040907 100%);
+  color: #faf7f2;
+  font-family: "Thmanyah Sans", system-ui, sans-serif;
+}
+
+.createInvitation__panel {
+  width: min(100%, 42rem);
+  padding: clamp(1.45rem, 4vw, 3rem);
+  border-radius: clamp(1.35rem, 3vw, 2.35rem);
+  background:
+    linear-gradient(145deg, rgba(232, 212, 139, 0.14), transparent 40%),
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(155, 199, 178, 0.18),
+      transparent 18rem
+    ),
+    linear-gradient(135deg, rgba(10, 31, 25, 0.94), rgba(6, 21, 15, 0.76));
+  box-shadow: 0 1.6rem 5rem rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(18px);
+}
+
+.createInvitation__eyebrow {
+  margin: 0 0 0.7rem;
+  color: #e8d48b;
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-weight: 700;
+}
+
+.createInvitation h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 8vw, 5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  text-shadow: 0 0 3rem rgba(232, 212, 139, 0.18);
+}
+
+.createInvitation__intro {
+  max-width: 31rem;
+  margin: clamp(1rem, 3vw, 1.35rem) 0 clamp(1.6rem, 4vw, 2.35rem);
+  color: rgba(250, 247, 242, 0.82);
+  font-size: clamp(1rem, 2.6vw, 1.24rem);
+  line-height: 1.8;
+}
+
+.createInvitation__field {
+  display: grid;
+  gap: 0.65rem;
+  color: #e8d48b;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.createInvitation__field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(232, 212, 139, 0.28);
+  border-radius: 1.1rem;
+  background: rgba(250, 247, 242, 0.08);
+  color: #faf7f2;
+  font: inherit;
+  font-size: clamp(1.1rem, 3vw, 1.45rem);
+  outline: 0;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.createInvitation__field input::placeholder {
+  color: rgba(250, 247, 242, 0.44);
+}
+
+.createInvitation__field input:focus {
+  border-color: #e8d48b;
+  background: rgba(250, 247, 242, 0.11);
+  box-shadow: 0 0 0 0.22rem rgba(232, 212, 139, 0.12);
+}
+
+.createInvitation__preview {
+  min-height: 3.3rem;
+  display: grid;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  overflow-wrap: anywhere;
+  border-radius: 1rem;
+  background: rgba(250, 247, 242, 0.06);
+  color: rgba(250, 247, 242, 0.62);
+  line-height: 1.6;
+}
+
+.createInvitation__preview a {
+  color: #e8d48b;
+  text-decoration: none;
+}
+
+.createInvitation__preview a:hover {
+  text-decoration: underline;
+}
+
+.createInvitation__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: clamp(1.2rem, 3vw, 1.7rem);
+}
+
+.createInvitation__actions button,
+.createInvitation__actions a {
+  min-height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.2rem;
+  border: 1px solid rgba(232, 212, 139, 0.35);
+  border-radius: 999rem;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.createInvitation__actions button {
+  background: #e8d48b;
+  color: #06150f;
+  cursor: pointer;
+}
+
+.createInvitation__actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.createInvitation__actions a {
+  background: rgba(250, 247, 242, 0.06);
+  color: #e8d48b;
+}
+
+.createInvitation__actions button:not(:disabled):hover,
+.createInvitation__actions a:hover {
+  transform: translateY(-2px);
+}
+
+.createInvitation__actions button:focus-visible,
+.createInvitation__actions a:focus-visible {
+  outline: 2px solid #e8d48b;
+  outline-offset: 0.24rem;
+}
+
+@media (max-width: 36rem) {
+  .createInvitation__actions button,
+  .createInvitation__actions a {
+    width: 100%;
+  }
+}

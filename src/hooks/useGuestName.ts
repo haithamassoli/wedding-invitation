@@ -4,7 +4,7 @@ export function useGuestName(): string | null {
 
   if (!name) return null;
 
-  const decodedName = decodeURIComponent(name).trim();
+  const decodedName = name.trim().replace(/\s+/g, " ");
   const knownArabicNames: Record<string, string> = {
     haitham: "هيثم",
   };
